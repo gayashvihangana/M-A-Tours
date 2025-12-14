@@ -7,15 +7,20 @@ body {
   color: #222;
 }
 
+/* img, video {
+  max-width: 100%;
+  height: auto;
+} */
+
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
-                    url("./assets/images/car-cover2.jpg");
+    url("./assets/images/car-cover2.jpg");
   background-position: center;
   background-size: cover;
   height: 70vh;
   color: white;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,15 +29,15 @@ body {
 
 .header h1 {
   margin: 0;
-  font-size: 5rem;
+  font-size: clamp(2rem, 4.5vw, 4rem);
   color: #ffffff;
-
 }
 
 .header p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  max-width: 700px;
+  font-size: clamp(1rem, .5vw, 1.5rem);
+  margin-top: 10px;
+  /* max-width: 700px; */
+  padding: 0 20px;
   color: #878080;
 }
 
@@ -42,7 +47,7 @@ a {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.97) ;
+  background-color: rgba(0, 0, 0, 0.97);
   text-align: center;
 }
 
