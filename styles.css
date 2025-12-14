@@ -42,7 +42,7 @@ a {
 }
 
 nav {
-  background-color: #004d4d;
+  background-color: rgba(0, 0, 0, 0.97) ;
   text-align: center;
 }
 
@@ -67,7 +67,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #007979;
+  background-color: #404545;
 }
 
 section {
