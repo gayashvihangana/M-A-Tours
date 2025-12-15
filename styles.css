@@ -34,7 +34,7 @@ body {
 }
 
 .header p {
-  font-size: clamp(1rem, .5vw, 1.5rem);
+  font-size: clamp(1rem, 1.7vw, 1.5rem);
   margin-top: 10px;
   /* max-width: 700px; */
   padding: 0 20px;
