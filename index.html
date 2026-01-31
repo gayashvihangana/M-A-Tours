@@ -39,136 +39,29 @@
           us today!
         </p>
       </div>
-      <div class="booking-options">
-        <a href="tel:+94724786262" class="book-btn call">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-telephone-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
-            />
-          </svg>
-          Call Now</a
-        >
-        <a
-          href="https://wa.me/94760781959"
-          target="_blank"
-          class="book-btn whatsapp"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-whatsapp"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
-            />
-          </svg>
-          WhatsApp</a
-        >
-        <!-- <a
-          href="https://maps.app.goo.gl/YOUR_MAP_LINK_HERE"
-          target="_blank"
-          class="book-btn location"
-          >📍 Find Us</a
-        > -->
+      <div class="booking-options" id="booking-container">
+        <!-- Booking buttons will be dynamically rendered here by BookingController -->
       </div>
     </div>
 
     <section id="vehicles">
       <h2>Vehicles</h2>
-      <div class="vehicle-grid">
-        <div class="vehicle-card">
-          <img src="./assets/images/kdh.jpg" alt="KDH Van" />
-          <h3>Toyota KDH</h3>
-          <p>💺 Seats: 7</p>
-        </div>
-        <div class="vehicle-card">
-          <img src="./assets/images/prius.jpg" alt="Prius Car" />
-          <h3>Toyota Prius</h3>
-          <p>💺 Seats: 3</p>
-        </div>
+      <div class="vehicle-grid" id="vehicle-container">
+        <!-- Vehicles will be dynamically rendered here by VehicleController -->
       </div>
     </section>
 
     <section id="places">
       <h2>Travel Destinations</h2>
-      <div class="places-grid">
-        <div class="place-card">
-          <img
-            src="./assets/images/airport.jpg"
-            alt="Colombo Bandaranaike International Airport"
-          />
-          <h3>✈️ Colombo Bandaranaike International Airport</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/hiriketiya.jpg" alt="Hiriketiya Beach" />
-          <h3>🌴 Hiriketiya Beach</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/ella.jpg" alt="Ella" />
-          <h3>🌿 Ella</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/mirissa.jpg" alt="Mirissa" />
-          <h3>🌊 Mirissa</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/galle-fort.jpg" alt="Galle Fort" />
-          <h3>🏯 Galle Fort</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/yala-safari.jpg" alt="Yala Safari" />
-          <h3>🐘 Yala Safari</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/sigiriya.jpg" alt="Sigiriya Rock" />
-          <h3>⛰️ Sigiriya Rock</h3>
-        </div>
-        <div class="place-card">
-          <img
-            src="./assets/images/dambulla-temple.jpg"
-            alt="Dambulla Temple"
-          />
-          <h3>🛕 Dambulla Temple</h3>
-        </div>
-        <div class="place-card">
-          <img
-            src="./assets/images/bentota-safari.jpg"
-            alt="Bentota River Safari"
-          />
-          <h3>🚤 Bentota River Safari</h3>
-        </div>
-        <div class="place-card">
-          <img src="./assets/images/unawatuna.jpg" alt="Unawatuna Bay" />
-          <h3>🏝️ Unawatuna Bay</h3>
-        </div>
+      <div class="places-grid" id="places-container">
+        <!-- Places will be dynamically rendered here by PlaceController -->
       </div>
     </section>
 
     <section id="photos">
       <h2>Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-1.webp" alt="Tour Photo 1" />
-        </div>
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-2.webp" alt="Tour Photo 2" />
-        </div>
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-3.webp" alt="Tour Photo 3" />
-        </div>
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-4.webp" alt="Tour Photo 4" />
-        </div>
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Gallery photos will be dynamically rendered here by GalleryController -->
       </div>
       <div class="view-more">
         <a href="gallery.html" class="gallery-link">View Full Gallery →</a>
@@ -182,3 +75,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+type="module" src="app

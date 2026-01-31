@@ -14,32 +14,15 @@
 
     <section id="photos">
       <h2>Gallery</h2>
-      <div class="gallery">
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-1.webp" alt="Photo-1" />
-        </div>
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-2.webp" alt="Photo-2" />
-        </div>
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-3.webp" alt="Photo-3" />
-        </div>
-        <div class="gallery-card">
-          <img src="./assets/images/gallery-4.webp" alt="Photo-4" />
-        </div>
+      <div class="gallery" id="gallery-full-container">
+        <!-- Gallery photos will be dynamically rendered here by GalleryController -->
       </div>
     </section>
 
     <section id="booking">
       <h2>Book Now</h2>
-      <div class="booking-options">
-        <a
-          href="https://wa.me/94760781959"
-          target="_blank"
-          class="book-btn whatsapp"
-          >💬 WhatsApp Us</a
-        >
-        <a href="tel:+94724786262" class="book-btn call">📞 Call Now</a>
+      <div class="booking-options" id="booking-gallery-container">
+        <!-- Booking buttons will be dynamically rendered here by BookingController -->
       </div>
     </section>
 
@@ -47,6 +30,6 @@
       <p>&copy; 2025 M & A Tours and Travels</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="app-gallery.js"></script>
   </body>
 </html>
