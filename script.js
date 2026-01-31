@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, observerOptions);
 
-  // Observe all sections and cards for animation
-  const animateElements = document.querySelectorAll('section, .vehicle-card, .place-card, .gallery-card, .testimonial-card, .feature-item');
+  // Observe all sections and cards for animation (except about-section)
+  const animateElements = document.querySelectorAll('section:not(.about-section), .vehicle-card, .place-card, .gallery-card, .testimonial-card');
   animateElements.forEach(el => {
     el.classList.add('fade-in-up');
     observer.observe(el);
