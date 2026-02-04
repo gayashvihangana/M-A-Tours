@@ -304,7 +304,7 @@ nav ul li a:hover {
 
 section {
   padding: 2rem;
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: auto;
 }
 
@@ -943,4 +943,379 @@ footer {
   .nav-container {
     padding: 0 1rem;
   }
+
+  .booking-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .booking-form {
+    order: 1;
+  }
+
+  .booking-info {
+    order: 2;
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .booking-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .nav-book-btn {
+    display: none;
+  }
+}
+
+/* Navigation Book Button */
+.nav-book-btn {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 25px !important;
+  font-weight: 600 !important;
+  margin-left: 0.5rem;
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+}
+
+.nav-book-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+}
+
+/* Booking CTA Section */
+.booking-cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #021a4d 0%, #044894 100%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.booking-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.booking-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.booking-cta-content h2 {
+  color: white;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.booking-cta-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.cta-btn.secondary {
+  background: white;
+  color: #021a4d;
+}
+
+.cta-btn.secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Booking Section Styles (for booking.html) */
+.booking-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #021a4d 0%, #044894 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.booking-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.booking-section .section-title {
+  color: white;
+}
+
+.booking-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+
+.booking-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.booking-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #021a4d;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.9rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.estimated-price {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  text-align: center;
+  border: 2px solid #25d366;
+}
+
+.estimated-price h3 {
+  margin: 0 0 1rem 0;
+  color: #021a4d;
+  font-size: 1.2rem;
+}
+
+.price-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #25d366;
+  margin-bottom: 0.5rem;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.alternative-contact {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alternative-contact span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.contact-link {
+  color: #021a4d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #25d366;
+}
+
+.booking-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card h3 {
+  color: #021a4d;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }

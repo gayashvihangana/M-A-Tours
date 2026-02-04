@@ -216,4 +216,165 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   createScrollToTopBtn();
+
+  // Booking Form Functionality
+  const bookingForm = document.getElementById('bookingForm');
+  const destinationSelect = document.getElementById('destination');
+  const customDestinationRow = document.getElementById('customDestinationRow');
+  const serviceTypeSelect = document.getElementById('serviceType');
+  const vehicleSelect = document.getElementById('vehicle');
+  const passengersSelect = document.getElementById('passengers');
+  const pickupDateInput = document.getElementById('pickupDate');
+  const estimatedPriceDiv = document.getElementById('estimatedPrice');
+  const priceAmountSpan = document.getElementById('priceAmount');
+
+  // Set minimum date to today
+  if (pickupDateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    pickupDateInput.setAttribute('min', today);
+  }
+
+  // Show/hide custom destination field
+  if (destinationSelect && customDestinationRow) {
+    destinationSelect.addEventListener('change', () => {
+      if (destinationSelect.value === 'custom') {
+        customDestinationRow.style.display = 'block';
+        document.getElementById('customDestination').required = true;
+      } else {
+        customDestinationRow.style.display = 'none';
+        document.getElementById('customDestination').required = false;
+      }
+      calculatePrice();
+    });
+  }
+
+  // Price calculation function
+  const calculatePrice = () => {
+    const serviceType = serviceTypeSelect?.value;
+    const destination = destinationSelect?.value;
+    const passengers = parseInt(passengersSelect?.value) || 0;
+    const vehicle = vehicleSelect?.value;
+
+    if (!serviceType || !destination || !passengers || !vehicle) {
+      estimatedPriceDiv.style.display = 'none';
+      return;
+    }
+
+    let basePrice = 0;
+    let priceRange = { min: 0, max: 0 };
+
+    // Base prices for different destinations (approximate)
+    const destinationPrices = {
+      'airport': { min: 8000, max: 12000 },
+      'hiriketiya': { min: 3000, max: 5000 },
+      'ella': { min: 15000, max: 20000 },
+      'mirissa': { min: 4000, max: 6000 },
+      'galle': { min: 3000, max: 5000 },
+      'yala': { min: 12000, max: 18000 },
+      'sigiriya': { min: 25000, max: 35000 },
+      'dambulla': { min: 20000, max: 28000 },
+      'bentota': { min: 8000, max: 12000 },
+      'unawatuna': { min: 3500, max: 5500 },
+      'custom': { min: 5000, max: 30000 }
+    };
+
+    // Get base price from destination
+    if (destinationPrices[destination]) {
+      priceRange = { ...destinationPrices[destination] };
+    }
+
+    // Adjust for service type
+    if (serviceType === 'day-tour') {
+      priceRange.min *= 1.5;
+      priceRange.max *= 1.5;
+    } else if (serviceType === 'multi-day') {
+      priceRange.min *= 3;
+      priceRange.max *= 4;
+    }
+
+    // Adjust for vehicle type
+    if (vehicle === 'kdh') {
+      priceRange.min *= 1.2;
+      priceRange.max *= 1.2;
+    }
+
+    // Format and display price
+    const formattedMin = Math.round(priceRange.min).toLocaleString('en-LK');
+    const formattedMax = Math.round(priceRange.max).toLocaleString('en-LK');
+    
+    priceAmountSpan.textContent = `LKR ${formattedMin} - ${formattedMax}`;
+    estimatedPriceDiv.style.display = 'block';
+  };
+
+  // Add event listeners for price calculation
+  [serviceTypeSelect, destinationSelect, passengersSelect, vehicleSelect].forEach(element => {
+    if (element) {
+      element.addEventListener('change', calculatePrice);
+    }
+  });
+
+  // Form submission handler
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(bookingForm);
+      const data = Object.fromEntries(formData.entries());
+
+      // Validate passenger capacity
+      const selectedVehicle = vehicleSelect.options[vehicleSelect.selectedIndex];
+      const vehicleCapacity = parseInt(selectedVehicle.dataset.capacity);
+      const passengers = parseInt(data.passengers);
+
+      if (vehicleCapacity && passengers > vehicleCapacity) {
+        alert(`⚠️ The selected vehicle can only accommodate ${vehicleCapacity} passengers. Please select a different vehicle or reduce the number of passengers.`);
+        return;
+      }
+
+      // Format destination
+      let destinationText = destinationSelect.options[destinationSelect.selectedIndex].text;
+      if (data.destination === 'custom' && data.customDestination) {
+        destinationText = data.customDestination;
+      }
+
+      // Format vehicle
+      const vehicleText = vehicleSelect.options[vehicleSelect.selectedIndex].text;
+
+      // Format service type
+      const serviceText = serviceTypeSelect.options[serviceTypeSelect.selectedIndex].text;
+
+      // Create WhatsApp message
+      const message = `*🚗 NEW BOOKING REQUEST*%0A%0A` +
+        `*Name:* ${data.fullName}%0A` +
+        `*Email:* ${data.email}%0A` +
+        `*Phone:* ${data.phone}%0A%0A` +
+        `*Trip Details:*%0A` +
+        `• Service Type: ${serviceText}%0A` +
+        `• Passengers: ${data.passengers}%0A` +
+        `• Vehicle: ${vehicleText}%0A` +
+        `• Pickup Date: ${data.pickupDate}%0A` +
+        `• Pickup Time: ${data.pickupTime}%0A` +
+        `• Pickup Location: ${data.pickupLocation}%0A` +
+        `• Destination: ${destinationText}%0A` +
+        (data.specialRequests ? `%0A*Special Requests:*%0A${data.specialRequests}%0A` : '') +
+        `%0A_Please confirm availability and final price._`;
+
+      // WhatsApp number
+      const whatsappNumber = '94760781959';
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      // Open WhatsApp
+      window.open(whatsappURL, '_blank');
+
+      // Optional: Show success message
+      setTimeout(() => {
+        if (confirm('✅ Booking details sent via WhatsApp!\n\nWould you like to submit another booking?')) {
+          bookingForm.reset();
+          estimatedPriceDiv.style.display = 'none';
+          customDestinationRow.style.display = 'none';
+        }
+      }, 1000);
+    });
+  }
 });
