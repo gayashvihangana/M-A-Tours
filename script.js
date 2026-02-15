@@ -6,12 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-        
-        // Close mobile menu after clicking
+      const href = link.getAttribute("href");
+      
+      // Only prevent default for internal anchor links (starting with #)
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+          
+          // Close mobile menu after clicking
+          const navMenu = document.querySelector('.nav-menu');
+          if (navMenu) {
+            navMenu.classList.remove('active');
+          }
+        }
+      } else {
+        // For external links, just close the mobile menu
         const navMenu = document.querySelector('.nav-menu');
         if (navMenu) {
           navMenu.classList.remove('active');

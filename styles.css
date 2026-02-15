@@ -111,6 +111,13 @@ nav.scrolled {
   font-weight: bold;
   color: white;
   padding: 1rem 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
 }
 
 .nav-menu {
@@ -1098,7 +1105,7 @@ footer {
 /* Booking Section Styles (for booking.html) */
 .booking-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #021a4d 0%, #044894 100%);
+  background: #1a1a1a;
   position: relative;
   overflow: hidden;
 }
@@ -1236,7 +1243,7 @@ footer {
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  background: #25d366;
   color: white;
   border: none;
   padding: 1.2rem 2rem;
@@ -1249,7 +1256,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .submit-btn:hover {
