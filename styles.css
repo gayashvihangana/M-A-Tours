@@ -322,25 +322,126 @@ section.contact-section {
   margin: 0;
 }
 
+/* Vehicles Section */
+#vehicles {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/car-cover3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+#vehicles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(2, 26, 77, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
+
+#vehicles h2 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: -1px;
+}
+
 .vehicle-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .vehicle-card {
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  margin: 1rem 0;
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  position: relative;
+  border-radius: 16px;
+  margin: 0;
+  background: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  height: 320px;
+}
+
+.vehicle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.vehicle-card:hover::before {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.35) 40%, transparent 100%);
 }
 
 .vehicle-card img {
   width: 100%;
-  /* max-width: 300px; */
+  height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover img {
+  transform: scale(1.05);
+}
+
+.vehicle-card h3 {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0 1.5rem;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.vehicle-card p {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
 }
 
 .place-list {
@@ -350,6 +451,34 @@ section.contact-section {
   padding-left: 0;
   list-style: none;
   font-size: 1.1rem;
+}
+
+/* Places Section */
+#places {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+#places h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #021a4d;
+}
+
+/* Gallery Section */
+#photos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+#photos h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #021a4d;
 }
 
 /* Gallery Grid - matches place-card styling */
@@ -873,8 +1002,19 @@ footer {
     gap: 1.5rem;
   }
 
+  .vehicle-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
   section {
     padding: 1rem;
+  }
+
+  #vehicles,
+  #places,
+  #photos {
+    padding: 3rem 1.5rem;
   }
 
   .about-section {
@@ -893,7 +1033,12 @@ footer {
   .places-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+  }
+
+  .vehicle-card {
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .footer-content {
@@ -904,6 +1049,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+  #vehicles,
+  #places,
+  #photos {
+    padding: 2rem 1rem;
+  }
+
   .header h1 {
     font-size: 1.8rem;
   }
