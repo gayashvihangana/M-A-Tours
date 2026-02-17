@@ -93,6 +93,18 @@ textarea:focus {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Prevent overflow on all sections */
 section {
   padding: 2rem;
@@ -1357,7 +1369,11 @@ footer {
 
   /* Booking form (booking.html) */
   .booking-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
+  }
+
+  .booking-section .container {
+    padding: 0 1.5rem;
   }
 
   .booking-wrapper {
@@ -1367,16 +1383,32 @@ footer {
 
   .booking-form {
     padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 
   .booking-info {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 1.1rem 2rem;
+  }
+
+  .estimated-price {
+    margin: 1.5rem 0;
+    padding: 1.3rem;
   }
 
   /* Footer */
@@ -1675,17 +1707,23 @@ footer {
 
   /* Booking form (booking.html) */
   .booking-section {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
+  }
+
+  .booking-section .container {
+    padding: 0 1rem;
   }
 
   .booking-section .section-title {
-    padding: 0 1rem;
+    padding: 0;
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    margin-bottom: 1.5rem;
   }
 
   .booking-subtitle {
-    font-size: 1rem;
-    padding: 0 1rem;
-    margin-top: -1.5rem;
+    font-size: 0.95rem;
+    padding: 0;
+    margin-top: -1rem;
     margin-bottom: 2rem;
   }
 
@@ -1696,11 +1734,12 @@ footer {
   .booking-form {
     padding: 1.5rem 1rem;
     border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   }
 
   .form-row {
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .form-group label {
@@ -1712,8 +1751,12 @@ footer {
   .form-group select,
   .form-group textarea {
     padding: 0.8rem;
-    font-size: 0.95rem;
+    font-size: 16px;
     border-radius: 6px;
+  }
+
+  .form-group textarea {
+    min-height: 90px;
   }
 
   .submit-btn {
@@ -1721,6 +1764,7 @@ footer {
     padding: 1rem 1.5rem;
     border-radius: 10px;
     min-height: 48px;
+    width: 100%;
   }
 
   .submit-btn svg {
@@ -1747,6 +1791,12 @@ footer {
   .alternative-contact {
     padding: 0.9rem;
     font-size: 0.85rem;
+  }
+
+  .contact-link {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.3rem;
   }
 
   .booking-info {
@@ -1973,6 +2023,7 @@ footer {
   background: #1a1a1a;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .booking-section::before {
@@ -2005,9 +2056,12 @@ footer {
 
 .booking-wrapper {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
   align-items: start;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .booking-form {
@@ -2015,18 +2069,23 @@ footer {
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 100%;
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-width: 0;
 }
 
 .form-group.full-width {
@@ -2050,6 +2109,8 @@ footer {
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
   background: white;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Ensure 16px minimum on mobile to prevent auto-zoom on iOS */
@@ -2058,6 +2119,18 @@ footer {
   .form-group select,
   .form-group textarea {
     font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    padding-right: 2.5rem;
   }
 }
 
@@ -2072,6 +2145,8 @@ footer {
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .estimated-price {
@@ -2081,6 +2156,8 @@ footer {
   margin: 1.5rem 0;
   text-align: center;
   border: 2px solid #25d366;
+  width: 100%;
+  max-width: 100%;
 }
 
 .estimated-price h3 {
@@ -2093,6 +2170,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .price-amount {
@@ -2100,6 +2178,7 @@ footer {
   font-weight: bold;
   color: #25d366;
   margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 
 .price-note {
@@ -2114,6 +2193,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
 .submit-btn {
@@ -2131,6 +2211,9 @@ footer {
   justify-content: center;
   gap: 0.5rem;
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  width: 100%;
+  max-width: 100%;
+  min-height: 52px;
 }
 
 .submit-btn:hover {
@@ -2155,6 +2238,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .alternative-contact span {
@@ -2167,6 +2251,7 @@ footer {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+  word-break: break-all;
 }
 
 .contact-link:hover {
@@ -2175,8 +2260,9 @@ footer {
 
 .booking-info {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  width: 100%;
 }
 
 .info-card {
@@ -2186,6 +2272,8 @@ footer {
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 100%;
 }
 
 .info-card:hover {
