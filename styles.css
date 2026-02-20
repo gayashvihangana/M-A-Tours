@@ -702,7 +702,7 @@ section.contact-section {
 
 /* Gallery CTA Section (Home Page) */
 .gallery-cta-section {
-  background: linear-gradient(135deg, #021a4d 0%, #014080 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
   padding: 5rem 2rem;
   text-align: center;
   position: relative;
@@ -1216,7 +1216,7 @@ footer {
 /* Contact Section */
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(135deg, #021a4d 0%, #014080 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
@@ -1287,7 +1287,7 @@ footer {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #021a4d, #25d366);
+  background: linear-gradient(90deg, #2a2a2a, #25d366);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -1307,7 +1307,7 @@ footer {
   width: 70px;
   height: 70px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #021a4d 0%, #014080 100%);
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1318,7 +1318,7 @@ footer {
 
 .contact-card:hover .contact-card-icon {
   transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(2, 26, 77, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .contact-card-icon.whatsapp-icon {
@@ -1331,7 +1331,7 @@ footer {
 
 .contact-card h3 {
   font-size: 1.3rem;
-  color: #021a4d;
+  color: #1a1a1a;
   margin: 0 0 1rem 0;
   font-weight: 600;
 }
@@ -1343,7 +1343,7 @@ footer {
 }
 
 .contact-details a {
-  color: #014080;
+  color: #2a2a2a;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
