@@ -392,7 +392,7 @@ nav.scrolled {
 }
 
 .gallery-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.42));
+  background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.62));
   color: white;
   text-align: center;
   padding: 4rem 2rem;
