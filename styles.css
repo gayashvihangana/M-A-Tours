@@ -2570,6 +2570,22 @@ footer {
   line-height: 1.2;
 }
 
+.vehicle-suggestion {
+  min-height: 1rem;
+  margin-top: 0.45rem;
+  color: #475569;
+  font-size: 0.84rem;
+  line-height: 1.3;
+}
+
+.vehicle-suggestion.is-recommended {
+  color: #0f5132;
+}
+
+.vehicle-suggestion.is-warning {
+  color: #9a3412;
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 100px;

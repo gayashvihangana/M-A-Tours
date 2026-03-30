@@ -247,6 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const serviceTypeSelect = document.getElementById('serviceType');
   const vehicleSelect = document.getElementById('vehicle');
   const passengersSelect = document.getElementById('passengers');
+  const vehicleSuggestion = document.getElementById('vehicleSuggestion');
   const pickupDateInput = document.getElementById('pickupDate');
   const estimatedPriceDiv = document.getElementById('estimatedPrice');
   const priceAmountSpan = document.getElementById('priceAmount');
@@ -322,6 +323,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const validatePhone = (value) => {
     const cleaned = value.replace(/\s+/g, '').replace(/[()-]/g, '');
     return /^\+?\d{9,15}$/.test(cleaned);
+  };
+
+  const updateVehicleSuggestion = () => {
+    if (!vehicleSuggestion || !passengersSelect) {
+      return;
+    }
+
+    const passengersValue = passengersSelect.value;
+    const selectedVehicle = vehicleSelect?.value;
+    const passengerCount = parseInt(passengersValue, 10);
+
+    vehicleSuggestion.className = 'vehicle-suggestion';
+
+    if (!passengersValue || Number.isNaN(passengerCount)) {
+      vehicleSuggestion.textContent = '';
+      return;
+    }
+
+    if (passengerCount <= 3) {
+      vehicleSuggestion.classList.add('is-recommended');
+      vehicleSuggestion.textContent = 'Recommended: Toyota Prius for up to 3 passengers.';
+      if (selectedVehicle === 'kdh') {
+        vehicleSuggestion.textContent += ' You can switch to Prius for a more cost-effective option.';
+      }
+      return;
+    }
+
+    if (passengerCount <= 7) {
+      vehicleSuggestion.classList.add('is-recommended');
+      vehicleSuggestion.textContent = 'Recommended: Toyota KDH for this group size.';
+      if (selectedVehicle === 'prius') {
+        vehicleSuggestion.classList.remove('is-recommended');
+        vehicleSuggestion.classList.add('is-warning');
+        vehicleSuggestion.textContent = 'Toyota Prius may not fit this group. Please choose Toyota KDH or Any Available.';
+      }
+      return;
+    }
+
+    vehicleSuggestion.classList.add('is-warning');
+    vehicleSuggestion.textContent = 'For 8+ passengers, select Any Available. We will confirm the best vehicle setup on WhatsApp.';
   };
 
   const generateBookingReference = () => {
@@ -507,6 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   restoreDraft();
+  updateVehicleSuggestion();
 
   // Show/hide custom destination field
   if (destinationSelect && customDestinationRow) {
@@ -593,6 +635,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  [passengersSelect, vehicleSelect].forEach((element) => {
+    if (element) {
+      element.addEventListener('change', updateVehicleSuggestion);
+    }
+  });
+
   if (bookingForm) {
     const formFields = bookingForm.querySelectorAll('input, select, textarea');
     formFields.forEach((field) => {
@@ -607,6 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (field.id === 'passengers' || field.id === 'vehicle') {
           validateField(passengersSelect);
           validateField(vehicleSelect);
+          updateVehicleSuggestion();
         }
         saveDraft();
       });
