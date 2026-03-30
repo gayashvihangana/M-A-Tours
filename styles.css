@@ -2553,6 +2553,23 @@ footer {
   box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
 }
 
+.form-group.has-error label {
+  color: #b3261e;
+}
+
+.form-group .input-error {
+  border-color: #d93025;
+  box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.15);
+}
+
+.field-error {
+  min-height: 1rem;
+  margin-top: 0.35rem;
+  color: #b3261e;
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
@@ -2607,6 +2624,37 @@ footer {
   width: 100%;
 }
 
+.booking-status {
+  border-radius: 10px;
+  padding: 0.95rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.booking-status a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.booking-status.is-success {
+  background: #ecfdf3;
+  border: 1px solid #6fd59f;
+  color: #0f5132;
+}
+
+.booking-status.is-error {
+  background: #fdecec;
+  border: 1px solid #f1a5a0;
+  color: #842029;
+}
+
+.booking-status.is-info {
+  background: #eef6ff;
+  border: 1px solid #93c5fd;
+  color: #1e3a8a;
+}
+
 .submit-btn {
   background: #25d366;
   color: white;
@@ -2625,6 +2673,11 @@ footer {
   width: 100%;
   max-width: 100%;
   min-height: 52px;
+}
+
+.submit-btn.is-loading {
+  opacity: 0.8;
+  cursor: wait;
 }
 
 .submit-btn:hover {
@@ -2707,4 +2760,58 @@ footer {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+/* Mobile Sticky CTA (homepage) */
+.mobile-quick-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.has-mobile-cta {
+    padding-bottom: calc(5.4rem + env(safe-area-inset-bottom));
+  }
+
+  .mobile-quick-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.55rem;
+    padding: 0.7rem 0.9rem calc(0.7rem + env(safe-area-inset-bottom));
+    background: rgba(8, 10, 14, 0.96);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .mobile-cta-btn {
+    border-radius: 999px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  .mobile-cta-btn.call {
+    background: #007bff;
+  }
+
+  .mobile-cta-btn.whatsapp {
+    background: #25d366;
+  }
+
+  .mobile-cta-btn.book {
+    background: #021a4d;
+  }
+
+  .scroll-top-btn {
+    bottom: 108px !important;
+  }
 }
