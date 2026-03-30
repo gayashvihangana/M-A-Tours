@@ -377,8 +377,22 @@ nav.scrolled {
 }
 
 /* Gallery Page Header */
+.gallery-page {
+  background-image: url("./assets/images/gallery_background.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .gallery-page {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
 .gallery-header {
-  background: linear-gradient(135deg, #021a4d 0%, #014080 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.42));
   color: white;
   text-align: center;
   padding: 4rem 2rem;
@@ -766,10 +780,7 @@ section.contact-section {
 
 /* Gallery Page Specific Styles */
 .gallery-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/images/gallery_background.jpg);
-  opacity: 0.9;
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(7, 16, 32, 0.52);
   padding: 4rem 2rem;
   max-width: 100%;
   margin: 0;
