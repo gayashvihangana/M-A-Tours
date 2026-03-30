@@ -1,141 +1,80 @@
 # M & A Tours and Travels
 
-🚗 **Professional Tour and Travel Services in Sri Lanka**
+Professional tour and transport website for Sri Lanka, focused on quick booking via WhatsApp, mobile-first usability, and strong search visibility.
 
-A modern, responsive website for M & A Tours and Travels - your trusted travel partner in Hiriketiya, Dikwella, Sri Lanka.
+Live site:
+https://gayashvihangana.github.io/M-A-Tours/
 
-## 🌟 Features
+## Features
 
-### ✨ Modern Design
-- **Responsive Layout**: Fully optimized for desktop, tablet, and mobile devices
-- **Sticky Navigation**: Easy-to-access menu that follows you as you scroll
-- **Smooth Animations**: Elegant fade-in effects and transitions throughout the site
-- **Professional UI**: Clean, modern interface with intuitive user experience
+- Responsive multi-page website: home, booking, gallery
+- Mobile navigation with sticky action bar on homepage
+- Interactive image lightbox for gallery and destination images
+- Booking form with:
+    - real-time validation
+    - vehicle capacity checks
+    - smart vehicle suggestion based on passenger count
+    - draft autosave and restore
+    - booking reference generation
+    - direct WhatsApp submission flow
+- Scroll-to-top button and smooth-scroll behavior
 
-### 📱 Core Sections
-1. **Home**: Eye-catching hero section with call-to-action
-2. **About Us**: Company information and key features
-3. **Vehicles**: Showcase of available transportation (KDH Van, Toyota Prius)
-4. **Travel Destinations**: 10+ popular Sri Lankan tourist spots
-5. **Gallery**: Photo gallery with lightbox view
-6. **Testimonials**: Customer reviews and ratings
-7. **Contact**: Multiple ways to get in touch
+## SEO and Indexing Setup
 
-### 🎨 Interactive Features
-- **Image Lightbox**: Click any image to view in full-screen mode
-- **Mobile Menu**: Hamburger menu for seamless mobile navigation
-- **Scroll-to-Top Button**: Quick return to top of page
-- **Smooth Scrolling**: Elegant navigation between sections
-- **Hover Effects**: Interactive cards and buttons
+- Per-page metadata (description, keywords, robots, canonical)
+- Open Graph and Twitter cards
+- Structured data (JSON-LD)
+    - `TravelAgency` on homepage
+    - `WebPage` on booking page
+    - `CollectionPage` on gallery page
+- `robots.txt` configured for crawling
+- `sitemap.xml` configured with live GitHub Pages URLs
 
-### 📞 Booking Options
-- **WhatsApp Integration**: Direct messaging via WhatsApp
-- **Phone Calls**: One-click calling functionality
-- **24/7 Availability**: Round-the-clock service information
+## Project Structure
 
-## 🚀 Technologies Used
-
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with flexbox and grid
-- **JavaScript (Vanilla)**: Interactive features without dependencies
-- **Google Fonts**: Poppins font family
-- **SVG Icons**: Scalable vector graphics for crisp icons
-
-## 📁 Project Structure
-
-```
+```text
 M-A-Tours/
-│
-├── index.html          # Main homepage
-├── gallery.html        # Full gallery page
-├── styles.css          # All styling
-├── script.js           # Interactive functionality
-├── README.md           # Project documentation
-│
-└── assets/
-    └── images/         # All image assets
-        ├── kdh.jpg
-        ├── prius.jpg
-        ├── car-cover2.jpg
-        ├── [destinations]
-        └── [gallery images]
+|-- index.html
+|-- booking.html
+|-- gallery.html
+|-- styles.css
+|-- script.js
+|-- robots.txt
+|-- sitemap.xml
+|-- README.md
+`-- assets/
+        `-- images/
 ```
 
-## 🎯 Key Enhancements
+## Local Usage
 
-### Performance
-- Optimized image loading with fade-in effects
-- Smooth scroll behavior
-- Efficient CSS animations
-- Minimal JavaScript footprint
+1. Clone or download the repository.
+2. Open `index.html` in a browser.
+3. Edit HTML/CSS/JS files and refresh.
 
-### Accessibility
-- Semantic HTML structure
-- ARIA labels for interactive elements
-- High contrast text
-- Keyboard navigation support
+No build process is required.
 
-### SEO
-- Meta descriptions and keywords
-- Open Graph tags for social sharing
-- Descriptive alt text for images
-- Clean URL structure
+## Google Search Console Steps
 
-## 📖 Usage
+1. Open Google Search Console and add this property:
+     - https://gayashvihangana.github.io/M-A-Tours/
+2. Submit sitemap:
+     - https://gayashvihangana.github.io/M-A-Tours/sitemap.xml
+3. Request indexing for:
+     - https://gayashvihangana.github.io/M-A-Tours/
+     - https://gayashvihangana.github.io/M-A-Tours/index.html
+     - https://gayashvihangana.github.io/M-A-Tours/booking.html
+     - https://gayashvihangana.github.io/M-A-Tours/gallery.html
 
-Simply open `index.html` in any modern web browser. No build process or server required!
+Note: Indexing can take several days or longer depending on crawl frequency.
 
-### Local Development
-1. Clone or download this repository
-2. Open `index.html` in your browser
-3. Make changes to HTML, CSS, or JS files
-4. Refresh browser to see updates
+## Contact
 
-## 🌐 Browser Support
+- Business: M & A Tours and Travels
+- Location: Hiriketiya, Dikwella, Sri Lanka
+- Phone: +94 72 478 6262
+- WhatsApp: +94 76 078 1959
 
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile browsers
+## License
 
-## 🔎 Google Indexing Checklist
-
-To help this site appear in Google search results after deployment:
-
-1. Deploy the site to your real production domain (for example, `https://gayashvihangana.github.io/M-A-Tours/`).
-2. Ensure domain URLs in `sitemap.xml` and `robots.txt` match your live site.
-3. Verify ownership in Google Search Console.
-4. Submit `https://gayashvihangana.github.io/M-A-Tours/sitemap.xml` in Google Search Console.
-5. Request indexing for:
-    - `/`
-    - `/index.html`
-    - `/booking.html`
-    - `/gallery.html`
-6. Keep pages publicly accessible and avoid blocking crawlers.
-
-Note: Appearing in search results is not instant. Google indexing can take from a few days to several weeks.
-
-## 📞 Contact Information
-
-**M & A Tours and Travels**
-- 📍 Location: Hiriketiya, Dikwella, Sri Lanka
-- 📱 Phone: +94 72 478 6262
-- 💬 WhatsApp: +94 76 078 1959
-- 🕐 Available: 24/7
-
-## 🎨 Color Scheme
-
-- Primary: `#021a4d` (Deep Blue)
-- Secondary: `#25d366` (WhatsApp Green)
-- Accent: `#007bff` (Call Blue)
-- Background: `#dce0e0` (Light Gray)
-- Dark: `#1a1a1a` (Almost Black)
-
-## 📝 License
-
-© 2025 M & A Tours and Travels. All rights reserved.
-
----
-
-**Made with ❤️ for travelers exploring beautiful Sri Lanka**
+Copyright (c) 2026 M & A Tours and Travels. All rights reserved.
