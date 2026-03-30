@@ -99,6 +99,23 @@ Simply open `index.html` in any modern web browser. No build process or server r
 - ✅ Edge (latest)
 - ✅ Mobile browsers
 
+## 🔎 Google Indexing Checklist
+
+To help this site appear in Google search results after deployment:
+
+1. Deploy the site to your real production domain (for example, `https://your-domain.com`).
+2. Update domain placeholders in `sitemap.xml` and `robots.txt`.
+3. Verify ownership in Google Search Console.
+4. Submit `https://your-domain.com/sitemap.xml` in Google Search Console.
+5. Request indexing for:
+    - `/`
+    - `/index.html`
+    - `/booking.html`
+    - `/gallery.html`
+6. Keep pages publicly accessible and avoid blocking crawlers.
+
+Note: Appearing in search results is not instant. Google indexing can take from a few days to several weeks.
+
 ## 📞 Contact Information
 
 **M & A Tours and Travels**
