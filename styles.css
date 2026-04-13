@@ -973,6 +973,12 @@ section.contact-section {
   background-color: #25d366;
 }
 
+.book-btn.booknow {
+  background-color: #25d366;
+  color: #fff;
+  font-weight: 600;
+}
+
 .book-btn.call {
   background-color: #007bff;
 }
