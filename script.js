@@ -1,6 +1,18 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  const setMobileMenuState = (isOpen) => {
+    if (!mobileMenuToggle || !navMenu) {
+      return;
+    }
+    navMenu.classList.toggle('active', isOpen);
+    mobileMenuToggle.classList.toggle('active', isOpen);
+    mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+  };
+
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll("nav a");
 
@@ -16,46 +28,30 @@ document.addEventListener("DOMContentLoaded", () => {
           target.scrollIntoView({ behavior: "smooth" });
           
           // Close mobile menu after clicking
-          const navMenu = document.querySelector('.nav-menu');
-          const mobileToggle = document.querySelector('.mobile-menu-toggle');
-          if (navMenu) {
-            navMenu.classList.remove('active');
-          }
-          if (mobileToggle) {
-            mobileToggle.classList.remove('active');
-          }
+          setMobileMenuState(false);
         }
       } else {
         // For external links, just close the mobile menu
-        const navMenu = document.querySelector('.nav-menu');
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        if (navMenu) {
-          navMenu.classList.remove('active');
-        }
-        if (mobileToggle) {
-          mobileToggle.classList.remove('active');
-        }
+        setMobileMenuState(false);
       }
     });
   });
 
   // Mobile menu toggle
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
   if (mobileMenuToggle && navMenu) {
     mobileMenuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      mobileMenuToggle.classList.toggle('active');
+      const isOpen = !navMenu.classList.contains('active');
+      setMobileMenuState(isOpen);
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
+        setMobileMenuState(false);
       }
     });
+
+    setMobileMenuState(false);
   }
 
   // Sticky navigation scroll effect
