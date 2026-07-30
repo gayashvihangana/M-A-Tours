@@ -10,7 +10,6 @@ https://gayashvihangana.github.io/M-A-Tours/
 - Responsive multi-page website: home, booking, gallery
 - Mobile navigation with sticky action bar on homepage
 - Interactive image lightbox for gallery and destination images
-- Popular Routes & Rates table with indicative per-vehicle fares, distances and travel times
 - Customer testimonials section
 - FAQ accordion (single-open, keyboard accessible, answers stay in the DOM for crawlers)
 - Booking form with:
@@ -67,9 +66,6 @@ Some of the new content needs the owner's confirmation:
     permission). Review / AggregateRating structured data was deliberately left
     out until the reviews are genuine — marking up invented reviews breaks
     Google's review snippet policy.
-- **Rates** (`index.html`, `#rates`) are derived from the booking form's
-    estimator in `script.js`. If you change one, change the other so they agree.
-    Distances and travel times are approximate, measured from Dikwella.
 - **FAQ answers** on payment methods and advance-booking time reflect common
     practice — adjust them to your actual policy. Any edit must also be made in
     the matching `FAQPage` JSON-LD block in `<head>`, since Google requires the

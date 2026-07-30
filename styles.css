@@ -2846,30 +2846,7 @@ footer {
   }
 }
 
-
-/* Visually hidden (kept available to screen readers) */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Popular Routes & Rates */
-.rates-section {
-  background: #ffffff;
-  padding: 5rem 2rem;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-
-.rates-intro,
+/* Section intro paragraphs (sit under the section title) */
 .testimonials-intro,
 .faq-intro {
   max-width: 720px;
@@ -2877,107 +2854,6 @@ footer {
   text-align: center;
   color: #555;
   line-height: 1.7;
-}
-
-.rates-table-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.rates-table {
-  width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-  text-align: left;
-  background-color: white;
-}
-
-.rates-table thead th {
-  background: linear-gradient(135deg, #021a4d 0%, #014080 100%);
-  color: #ffffff;
-  font-weight: 600;
-  padding: 1rem 1.25rem;
-  white-space: nowrap;
-}
-
-.rates-table thead th span {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.rates-table tbody th,
-.rates-table tbody td {
-  padding: 0.95rem 1.25rem;
-  border-top: 1px solid rgba(2, 26, 77, 0.08);
-  vertical-align: middle;
-}
-
-.rates-table tbody th {
-  font-weight: 600;
-  color: #021a4d;
-  white-space: nowrap;
-}
-
-.rates-table tbody td {
-  color: #555;
-  white-space: nowrap;
-}
-
-.rates-table tbody td:nth-child(4),
-.rates-table tbody td:nth-child(5) {
-  color: #222;
-  font-weight: 500;
-}
-
-.rates-table tbody tr:nth-child(even) {
-  background: rgba(2, 26, 77, 0.03);
-}
-
-.rates-table tbody tr:hover {
-  background: rgba(37, 211, 102, 0.08);
-}
-
-.rates-footnote {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.25rem;
-  max-width: 1200px;
-  margin: 1.75rem auto 0;
-}
-
-.rates-footnote p {
-  flex: 1 1 320px;
-  margin: 0;
-  color: #555;
-  font-size: 0.92rem;
-  line-height: 1.65;
-}
-
-.rates-cta {
-  flex: 0 0 auto;
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  border-radius: 50px;
-  background-color: #25d366;
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
-}
-
-.rates-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
 /* FAQ */
@@ -3112,31 +2988,14 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .rates-section,
   .faq-section {
     padding: 3rem 1.5rem;
   }
 
-  .rates-intro,
   .testimonials-intro,
   .faq-intro {
     margin: -1.5rem auto 2rem;
     font-size: 0.94rem;
-  }
-
-  .rates-footnote {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  /* flex-basis maps to height once the row stacks, so reset it */
-  .rates-footnote p {
-    flex: 0 0 auto;
-  }
-
-  .rates-cta {
-    text-align: center;
   }
 
   .faq-question {
@@ -3150,12 +3009,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .rates-section,
   .faq-section {
     padding: 2.5rem 1rem;
-  }
-
-  .rates-table {
-    font-size: 0.88rem;
   }
 }
