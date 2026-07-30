@@ -10,9 +10,6 @@ https://gayashvihangana.github.io/M-A-Tours/
 - Responsive multi-page website: home, booking, gallery
 - Mobile navigation with sticky action bar on homepage
 - Interactive image lightbox for gallery and destination images
-- Popular Routes & Rates table with indicative per-vehicle fares, distances and travel times
-- Customer testimonials section
-- FAQ accordion (single-open, keyboard accessible, answers stay in the DOM for crawlers)
 - Booking form with:
     - real-time validation
     - vehicle capacity checks
@@ -28,7 +25,6 @@ https://gayashvihangana.github.io/M-A-Tours/
 - Open Graph and Twitter cards
 - Structured data (JSON-LD)
     - `TravelAgency` on homepage
-    - `FAQPage` on homepage (8 questions, eligible for FAQ rich results)
     - `WebPage` on booking page
     - `CollectionPage` on gallery page
 - `robots.txt` configured for crawling
@@ -57,23 +53,6 @@ M-A-Tours/
 3. Edit HTML/CSS/JS files and refresh.
 
 No build process is required.
-
-## Content To Review Before Publishing
-
-Some of the new content needs the owner's confirmation:
-
-- **Testimonials** (`index.html`, `#testimonials`) are placeholders marked
-    "Placeholder Name". Replace them with real customer feedback (with
-    permission). Review / AggregateRating structured data was deliberately left
-    out until the reviews are genuine — marking up invented reviews breaks
-    Google's review snippet policy.
-- **Rates** (`index.html`, `#rates`) are derived from the booking form's
-    estimator in `script.js`. If you change one, change the other so they agree.
-    Distances and travel times are approximate, measured from Dikwella.
-- **FAQ answers** on payment methods and advance-booking time reflect common
-    practice — adjust them to your actual policy. Any edit must also be made in
-    the matching `FAQPage` JSON-LD block in `<head>`, since Google requires the
-    structured data to match the visible text.
 
 ## Google Search Console Steps
 

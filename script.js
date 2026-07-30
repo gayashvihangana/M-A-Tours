@@ -235,32 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createScrollToTopBtn();
 
-  // FAQ accordion
-  const faqQuestions = document.querySelectorAll('.faq-question');
-
-  if (faqQuestions.length > 0) {
-    const setFaqState = (button, isOpen) => {
-      const item = button.closest('.faq-item');
-      const answer = document.getElementById(button.getAttribute('aria-controls'));
-
-      button.setAttribute('aria-expanded', String(isOpen));
-      item?.classList.toggle('is-open', isOpen);
-      if (answer) {
-        answer.hidden = !isOpen;
-      }
-    };
-
-    faqQuestions.forEach((button) => {
-      button.addEventListener('click', () => {
-        const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-        // Only one answer stays open at a time
-        faqQuestions.forEach((otherButton) => setFaqState(otherButton, false));
-        setFaqState(button, !isOpen);
-      });
-    });
-  }
-
   // Booking Form Functionality
   const bookingForm = document.getElementById('bookingForm');
   const destinationSelect = document.getElementById('destination');
